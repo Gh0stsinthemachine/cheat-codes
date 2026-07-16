@@ -134,6 +134,15 @@ Skills are predefined instruction files — each a `SKILL.md` with a name, descr
 **Source:** @realamrutpatil on Threads
 **Note:** Build skills for deploy flow, component patterns, test conventions.
 
+### appstore-review-skill — audit mobile apps against store policies before submission
+
+Claude Code plugin that checks Swift/Kotlin/Flutter/React Native/Expo (and more) projects against Apple App Store and Google Play guidelines before you submit. Two commands: `/appstore-review` and `/playstore-review`. Flags safety, privacy/legal (account deletion, tracking, manifests), business (IAP/subscriptions), design (minimum functionality, sign-in), and metadata issues with a structured report.
+
+`/plugin marketplace add devsemih/appstore-review-skill` then `/plugin install appstore-review-skill`
+
+**Source:** github.com/devsemih/appstore-review-skill
+**Note:** Run against PracticeCoach before App Store submission — catches account-deletion and tracking-disclosure rejections early.
+
 ### Install the frontend-design skill for bold UI
 
 Anthropic's official skill for production-grade interfaces. Forces bold design choices instead of generic AI aesthetics. Covers design systems, responsive layouts, accessibility, scalable components.
