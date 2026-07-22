@@ -33,6 +33,23 @@ The highest-leverage habit across all AI coding: never ask for output you can't 
 
 ---
 
+### Make Claude your GTM/CFO analyst, not your hype man
+
+If you generate ideas faster than you can vet them, the bottleneck isn't ideas — it's honest analysis. Claude defaults to enthusiasm, which is worse than useless: it feels like validation and costs you months. Fix it by writing the division of labor into CLAUDE.md:
+
+> **My job:** be creative, ideative, kick off new opportunities.
+> **Your job:** run a thorough GTM and CFO analysis on each one — can it book revenue, and if so, how. If an idea is a waste, say so plainly. If it just needs a revenue path, figure out the path — don't hand the question back to me.
+
+Three things make it actually work:
+
+1. **Define the bar, not the vibe.** "Can book revenue" has to be a claim that gets checked: a named buyer, a channel that reaches them at ~$0, evidence money changes hands for this today, and a price. An idea that can't answer all four hasn't earned a yes. Add the CFO half — unit economics, units/month to clear your burn, time to first dollar — so every verdict carries numbers.
+2. **Pre-authorize the "no."** Write in that pushing back is the job, and that *pressure isn't evidence*. Otherwise you'll argue Claude out of every correct no — it's built to be agreeable, and you're the one it's agreeing with. Killing an idea is a deliverable, not a failure to deliver.
+3. **Aim friction at economics, never at count.** This is the subtle one. A directive like "focus on shipping what you have" reads as discipline but fires on *shape* — so it kills good new bets too, and it'll fire on your own top priority if that priority isn't named in the file. Friction belongs on *which market* and *what unit economics*, never on *how many bets*.
+
+**Note:** Corollary — anything not written in CLAUDE.md is invisible, and worse than invisible: it re-enters every session looking like an unvetted new idea and collects the friction meant for strangers. Keep the priority list current or the config will quietly argue against your real work.
+
+---
+
 ## Focus & task-management prompts
 
 Prompts for breaking work loose when juggling many parallel projects. (Note: these circulated under a "Claude ADHD Executive Function Mode" headline — that's clickbait, there's no such feature. They're just well-built prompts.)
