@@ -38,7 +38,36 @@ A tiny TypeScript library that measures and lays out text far faster than the DO
 
 ## Infra / deploy
 
-*(Add notes here as they come up — Vercel deploy patterns, R2 setup, domain config, etc.)*
+### Custom domain on Vercel with Cloudflare DNS — the two rules that matter
+
+Launching a domain onto an existing Vercel project is two halves, and each has one non-obvious gotcha.
+
+**Half 1 — Cloudflare DNS records:**
+
+- A record: `@` → `76.76.21.21`
+- CNAME: `www` → `cname.vercel-dns.com`
+- **Both must be DNS only (gray cloud), not proxied.** Cloudflare will actively nag you to proxy them ("Proxying is required for most security and performance features") — ignore it. Orange-cloud proxying breaks Vercel's SSL certificate issuance AND its renewals, so a proxied record can work today and kill the site at the next cert renewal months later. Vercel is already the CDN; Cloudflare proxying adds nothing here.
+
+**Half 2 — tell Vercel the domain belongs to the project.** DNS alone gives you a Vercel 404; the project has to claim the domain so Vercel mints the cert.
+
+- Dashboard route: project → Settings → Domains → add both apex and www.
+- **If the dashboard login is unreachable** (embedded browser, remote session — Vercel's passkey 2FA can't complete its WebAuthn ceremony outside a real browser profile), the CLI device-code flow works from any terminal: `npx vercel login` prints a `vercel.com/oauth/device?user_code=XXXX-XXXX` URL, approve it on any logged-in device, and the CLI is authenticated. Then:
+  ```
+  npx vercel domains add <domain> <project> --scope <team-slug>
+  npx vercel domains add www.<domain> <project> --scope <team-slug>
+  ```
+
+**Verify like you mean it** (a 200 on the old .vercel.app URL proves nothing about the new domain):
+
+```
+dig +short <domain> A               # expect 76.76.21.21
+curl -sI https://www.<domain>       # expect 200
+echo | openssl s_client -connect www.<domain>:443 -servername www.<domain> 2>/dev/null | openssl x509 -noout -dates
+```
+
+**Gotcha at verification time:** your local Mac resolver may have cached the domain's pre-launch NXDOMAIN and keep failing after the whole internet resolves it. Check against `@1.1.1.1` / `@8.8.8.8` before panicking; `sudo dscacheutil -flushcache` clears the local cache.
+
+**Source:** AF Auto Mechanics launch, Aug 2026 — afautomechanics.com registered, DNS'd, attached, and serving with a valid cert inside an hour, with every one of these gotchas hit along the way.
 
 ---
 
