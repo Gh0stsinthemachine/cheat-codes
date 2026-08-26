@@ -24,7 +24,16 @@ This repo is plain markdown by design. No build step, no deploy, nothing to brea
 | [What's New in 2026](./tips/whats-new.md) | Features that shipped recently and are worth trying — Auto Mode, Fast Mode, `/ultrareview`, Agent Teams, Routines, and more. |
 | [The Stack](./tips/stack.md) | Frontend, backend, infra, payments. What to use, what to avoid, libraries worth knowing. |
 | [Workflow & Security](./tips/workflow.md) | Spec-driven workflows, API security prompts, general patterns. |
+| [Local LLM Server](./tips/local-llm-server.md) | Running models locally — M2 Ollama, offload bridge, Tailscale. |
 | [Python](./tips/python.md) | Notes on getting useful with Python. |
+
+## Ideas
+
+Longer-form analyses and brainstorms — ideas run through the GTM/CFO bar, not just captured.
+
+| Doc | What's in it |
+|---|---|
+| [Faceless-business prompt pack](./ideas/faceless-business-gtm-cfo.md) | A viral 8-prompt "faceless business" playbook, scored against the revenue bar. Verdict: a content checklist dressed as a business. |
 
 ---
 
