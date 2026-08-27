@@ -25,12 +25,14 @@ This repo is plain markdown by design. No build step, no deploy, nothing to brea
 | [The Stack](./tips/stack.md) | Frontend, backend, infra, payments. What to use, what to avoid, libraries worth knowing. |
 | [Workflow & Security](./tips/workflow.md) | Spec-driven workflows, API security prompts, general patterns. |
 | [Python](./tips/python.md) | Notes on getting useful with Python. |
+| [Local LLM Server](./tips/local-llm-server.md) | The M2 Ollama runbook: server, offload bridge, fallback, mobile. |
+| [Graveyard](./tips/graveyard.md) | Killed claims — debunked viral tips, kept so they're never re-answered as true. |
 
 ---
 
 ## Adding a new tip
 
-Keep the format consistent so it stays scannable and Claude-readable. Each tip is a `###` heading followed by a short body, a command block if relevant, and a source line.
+This repo is the **intake/vetting tier** of the claude-sync "brain." Tips arrive from the internet, get vetted (bullshit vs value) via the `cheat-codes` skill, and the highest-value verified ones are promoted — with Tom's approval — into claude-sync where they govern real work. Keep the format consistent so it stays scannable and Claude-readable.
 
 ```markdown
 ### Short, specific title
@@ -40,10 +42,12 @@ One or two sentences on what it does and why it matters.
 `the command --or-flag`
 
 **Source:** @handle on Threads / docs link
+**Vetted:** YYYY-MM-DD · VERIFIED|PLAUSIBLE · how it was tested
 **Note:** (optional) how it applies to my work.
+**Status:** (only if promoted) promoted → claude-sync/<path>
 ```
 
-Drop it under the right file in `tips/`, commit, done. The repo *is* the database.
+The `Vetted:` line records that it cleared vetting and how (VERIFIED = tested/documented, PLAUSIBLE = credible but untested). Older tips without it stay valid. Debunked claims go in [`tips/graveyard.md`](./tips/graveyard.md), not here. The repo *is* the database. (Vetted tips auto-commit under a standing grant; you don't need to remind me to push.)
 
 ---
 

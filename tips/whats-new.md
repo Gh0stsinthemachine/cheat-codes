@@ -4,6 +4,18 @@ Features that shipped recently and are worth trying. Pulled from the community [
 
 ---
 
+## Platform / API
+
+### Computer use, Skills API, and Files API hit GA (Aug 2026)
+
+Anthropic moved three agent capabilities to general availability (production, not beta) on Aug 20, 2026: **computer use** (agents that see a screenshot and click/type/scroll, now multiple actions per turn, HIPAA-eligible under BAA, toolset `computer_toolset_20260801`), the **Skills API** (upload and version your own skills — folders of instructions/scripts/templates Claude loads on demand — no hosting), and the **Files API** (auto file expiration, 5x higher rate limits, 1 TB/org). Computer use also added a **browser use tool** that targets web elements by page structure, not pixels.
+
+**Source:** [claude.com/blog/computer-use-skills-api-files-api](https://claude.com/blog/computer-use-skills-api-files-api)
+**Vetted:** 2026-08-27 · VERIFIED · fetched the official announcement; cross-checked platform docs
+**Note:** Viral framing (@nalucamanse thread) called "Browser Use" a fourth standalone product — it's a *tool inside* computer use, so it's three GA items, not four. Strategic angle for Black Cloud: the **Skills API** is the one to watch — programmatic upload/versioning of skills could change how the claude-sync skill library is managed and how the agentic-staff products ship skills. Not a workflow change today; a capability to evaluate.
+
+---
+
 ## Permission & speed modes
 
 ### Auto Mode — eliminate permission prompts
