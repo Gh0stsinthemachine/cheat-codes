@@ -78,6 +78,12 @@ File-scoped concrete asks only. Multi-file or design decisions → that's a Clau
 
 ---
 
+### Lessons from live testing (2026-08-21)
+
+- **qwen2.5-coder is a code model** — coherent but generic on open knowledge questions (pet care, health, research). For those use `ask-local.sh` (routes to gemma4:12b) or just ask Claude — that class of question is cheap there.
+- **Cold model-swap is the hidden latency killer.** 16GB can't hold both models; switching qwen→gemma4 pays a fresh load ON TOP of gemma4's 20-60s generation. A single long prompt blew a 180s curl timeout this way. Fix shipped in `ollama-env.sh`: premium calls auto-get 300s, requests send `keep_alive: 30m` so the last-used model stays resident, and timeouts report as timeouts (`timeout_300s` in the offload log) instead of a generic error.
+- **The seesaw is inherent:** keeping gemma4 warm evicts qwen and vice versa. Consecutive same-model calls are cheap; alternating models pays the load tax each swap. Batch same-model work together.
+
 ### Troubleshooting
 
 | Symptom | Fix |
