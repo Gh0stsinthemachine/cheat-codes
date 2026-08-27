@@ -28,6 +28,14 @@ This repo is plain markdown by design. No build step, no deploy, nothing to brea
 | [Local LLM Server](./tips/local-llm-server.md) | The M2 Ollama runbook: server, offload bridge, fallback, mobile. |
 | [Graveyard](./tips/graveyard.md) | Killed claims — debunked viral tips, kept so they're never re-answered as true. |
 
+## Ideas
+
+Longer-form analyses and brainstorms — ideas run through the GTM/CFO bar, not just captured.
+
+| Doc | What's in it |
+|---|---|
+| [Four AI-service ideas](./ideas/ai-services-gtm-cfo.md) | The @kiro_hq_ai "AI services" thread (RAG builds, contract review, grant writing, claims triage), scored against the revenue bar. One survives; deep-dive included. |
+
 ---
 
 ## Adding a new tip
