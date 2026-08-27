@@ -37,6 +37,7 @@ Longer-form analyses and brainstorms — ideas run through the GTM/CFO bar, not 
 | Doc | What's in it |
 |---|---|
 | [Faceless-business prompt pack](./ideas/faceless-business-gtm-cfo.md) | A viral 8-prompt "faceless business" playbook, scored against the revenue bar. Verdict: a content checklist dressed as a business. |
+| [Four AI-service ideas](./ideas/ai-services-gtm-cfo.md) | The @kiro_hq_ai "AI services" thread (RAG builds, contract review, grant writing, claims triage), scored against the revenue bar. One survives; deep-dive included. |
 
 ---
 
