@@ -211,3 +211,12 @@ Adjust the phase lengths to your venue's timeline. Cut from Phase 2 first, then 
 Fastest path: create one Spotify or Apple Music playlist per phase, named `Reception 1 - Cocktails`, `Reception 2 - Dinner`, and so on. Whoever runs sound switches playlists at each transition instead of scrolling one 80-track list. Keep the reserve as its own playlist.
 
 If a DJ is running it, send this file and let them source the tracks. Ask for clean edits explicitly.
+
+## Importing into Apple Music
+
+`wedding-reception.csv` in this directory lists every track (76 numbered plus the 10 reserve) with phase and order. Apple Music has no public import API for a personal account, so use one of these:
+
+1. **Soundiiz or TuneMyMusic** (free tier is enough for this size). Upload the CSV, choose Apple Music as the destination, sign in, and it creates the playlist. Do one upload per phase if you want the per-phase playlists described above: filter the CSV by the Phase column first.
+2. **Shortcuts on iPhone or Mac.** Build a shortcut that reads a text list, runs "Search Music" per line, and "Add to Playlist". Slower to set up, no third party involved.
+
+Either way, check the matches after import. Covers and live versions are the usual mismatches.
