@@ -30,6 +30,16 @@ This repo is plain markdown by design. No build step, no deploy, nothing to brea
 
 ---
 
+## Ideas
+
+Longer-form analyses and brainstorms — ideas run through the GTM/CFO bar, not just captured.
+
+| Doc | What's in it |
+|---|---|
+| [Faceless-business prompt pack](./ideas/faceless-business-gtm-cfo.md) | A viral 8-prompt "faceless business" playbook, scored against the revenue bar. Verdict: a content checklist dressed as a business. |
+
+---
+
 ## Adding a new tip
 
 This repo is the **intake/vetting tier** of the claude-sync "brain." Tips arrive from the internet, get vetted (bullshit vs value) via the `cheat-codes` skill, and the highest-value verified ones are promoted — with Tom's approval — into claude-sync where they govern real work. Keep the format consistent so it stays scannable and Claude-readable.

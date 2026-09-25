@@ -50,6 +50,17 @@ Three things make it actually work:
 
 ---
 
+### Run viral prompt packs through the analyst before you run them
+
+"Faceless business," "AI side hustle," "$3K/month" prompt packs are execution playbooks with the demand question deleted — they're all content production and distribution, and they presume a buyer instead of proving one. Before spending a month making content, pipe the pack's output through the four-term bar (named buyer / ~$0 channel / evidence money changes hands / price) plus the CFO math. Most niches fail on *named buyer*; the useful prompts (content calendar, script builder, growth loops) are real — but only once a product and a buyer already exist to point them at.
+
+`prompt pack → four-term bar + CFO math → verdict`
+
+**Source:** @creatoraugustas on Threads (the 8-prompt "faceless business" pack)
+**Note:** Worked example: [`ideas/faceless-business-gtm-cfo.md`](../ideas/faceless-business-gtm-cfo.md). Verdict — a content checklist dressed as a business; invert its order (sell to a proven buyer first, *then* use the content prompts as a ~$0 channel). The $3K/month "money map" pencils out to millions of monthly views feeding a specific product — not "post for 30 days."
+
+---
+
 ## Focus & task-management prompts
 
 Prompts for breaking work loose when juggling many parallel projects. (Note: these circulated under a "Claude ADHD Executive Function Mode" headline — that's clickbait, there's no such feature. They're just well-built prompts.)
