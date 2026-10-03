@@ -96,6 +96,7 @@ A viral thread ranks output formats from writing up to video. Verified core: **A
 
 **Source:** screenshot of an X thread, author not shown; STE rules per [Wikipedia: Simplified Technical English](https://en.wikipedia.org/wiki/Simplified_Technical_English)
 **Vetted:** 2026-10-03 · VERIFIED (STE rules) / PLAUSIBLE (the "LLMs are well-versed" and "video is starting to work" claims)
+**Status:** promoted → claude-sync/CLAUDE.md (Communication Style, "Pick the format before writing") and claude-sync/skills/voiceover, 2026-10-03
 **Note:** Fits Tom closely. "Jargon / I can't follow these steps" was a top correction (20 of 132 sessions), and he thinks spatially, so diagrams suit him. Use STE-lite for step-by-step instructions to Tom only. Never use it for external copy or his own writing, where it reads robotic. HTML pages are for reports he'll come back to; quick answers stay in chat. Explainer video is parked until a specific sales asset needs one (infrastructure before validation).
 
 ### Free narration voices that allow commercial use (vs ElevenLabs)
