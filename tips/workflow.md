@@ -85,3 +85,27 @@ Prompts for breaking work loose when juggling many parallel projects. (Note: the
 
 **Source:** @aicreatortyler on Threads
 **Note:** For the cold-start problem on a dreaded task.
+
+## Output formats & narration
+
+### Pick the output format before writing: STE-lite, diagram, HTML page, or explainer video
+
+A viral thread ranks output formats from writing up to video. Verified core: **ASD-STE100** (Simplified Technical English) is a real controlled-language standard built for aerospace maintenance manuals. The current issue (January 2025) has 53 writing rules and an approved dictionary of about 900 words. Instructions use one action per sentence, in the imperative and active voice, at 20 words or fewer; descriptive sentences cap at 25 words. Asking for "80% of the way to ASD-STE100" keeps those habits without the robotic dictionary. Diagrams and HTML pages are real, well-supported outputs (claude.ai renders them as artifacts). "3b1b-style explainer video" means Manim, an open-source animation library, plus a narration voice.
+
+> Explain this 80% of the way to ASD-STE100: one action per step, imperative verb first, 20 words max, one name per thing, no idioms.
+
+**Source:** screenshot of an X thread, author not shown; STE rules per [Wikipedia: Simplified Technical English](https://en.wikipedia.org/wiki/Simplified_Technical_English)
+**Vetted:** 2026-10-03 · VERIFIED (STE rules) / PLAUSIBLE (the "LLMs are well-versed" and "video is starting to work" claims)
+**Note:** Fits Tom closely. "Jargon / I can't follow these steps" was a top correction (20 of 132 sessions), and he thinks spatially, so diagrams suit him. Use STE-lite for step-by-step instructions to Tom only. Never use it for external copy or his own writing, where it reads robotic. HTML pages are for reports he'll come back to; quick answers stay in chat. Explainer video is parked until a specific sales asset needs one (infrastructure before validation).
+
+### Free narration voices that allow commercial use (vs ElevenLabs)
+
+For marketing and explainer voiceovers, the license on the model weights matters as much as the one on the code.
+- **Kokoro-82M** (`pip install kokoro soundfile` + `espeak-ng`). Apache-2.0 code and weights, so commercial use is fine. Small and fast on a Mac, with a fixed set of stock voices and no cloning of your own voice.
+- **Chatterbox** by Resemble AI (`pip install chatterbox-tts`). MIT license. Clones a voice from a short reference clip. Runs on Apple Silicon (`device="mps"`) or CPU. Every file carries an inaudible watermark.
+- **Avoid for marketing:** XTTS-v2. Its code is MPL-2.0, but the weights are under the Coqui Public Model License, not a permissive commercial one.
+- **ElevenLabs:** the free plan (10k credits a month) has **no commercial license**. Starter is $6/mo ($1 the first month), includes a commercial license and 30k credits, which is roughly 30 minutes of audio.
+
+**Source:** [github.com/hexgrad/kokoro](https://github.com/hexgrad/kokoro) · [github.com/resemble-ai/chatterbox](https://github.com/resemble-ai/chatterbox) · [elevenlabs.io/pricing](https://elevenlabs.io/pricing) · [ElevenLabs commercial-use FAQ](https://help.elevenlabs.io/hc/en-us/articles/13313564601361-Can-I-publish-the-content-I-generate-on-the-platform)
+**Vetted:** 2026-10-03 · VERIFIED from the repos and the pricing page; not yet run on Tom's Mac
+**Note:** Start free with Kokoro. Use Chatterbox to put Tom's own voice on narration without his mic chain. Move to ElevenLabs Starter only if a side-by-side shows a quality gap worth $6/mo against burn. arrangementLab already has a Remotion video pipeline that a generated narration track can drop into.
