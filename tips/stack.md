@@ -92,3 +92,12 @@ Learned the expensive way. Of three products, the two on hosted links (arrangeme
 4. **Verify the money path before calling anything "live."** Probe the real checkout endpoint. A 200 on the marketing site tells you nothing about whether a customer can actually pay you.
 
 **Note:** Polar's current checkout API is `POST /v1/checkouts/` with a `products` **array**. The older `/v1/checkouts/custom/` with a `product_id` scalar still routes but is undocumented — don't build on it. Auth is checked before body validation, so a 401 tells you nothing about whether your payload shape is correct.
+
+### Strix — autonomous AI pen-testing agent (pre-launch security QA)
+
+Open-source agent (`github.com/usestrix/strix`, Apache-2.0) that runs a target app dynamically, injects payloads, and writes a working proof-of-concept for each real vulnerability — active exploitation, not a static scan. `pipx install strix-agent`; needs Docker running and Python 3.12+; set `STRIX_LLM` + `LLM_API_KEY`; `strix --target ./dir | https://staging-url | openapi.json`. Results land in `agent_runs/<name>/`. Runs fully local with your own key; there is also a hosted `app.strix.ai` (don't use it — ships the target off-device) and a paid Enterprise tier.
+
+**Source:** [github.com/usestrix/strix](https://github.com/usestrix/strix) · install per [freeCodeCamp walkthrough](https://www.freecodecamp.org/news/how-to-use-strix-the-open-source-ai-agent-for-security-testing/)
+**Vetted:** 2026-10-06 · VERIFIED (repo + docs read; not yet run on Tom's Mac)
+**Note:** Use for pre-launch QA on Tom's own apps and, with written permission, insurance client sites that embed Bindery. Local CLI only; staging + synthetic data; cost scales with LLM calls so cap the first run. Full guardrails in claude-sync/skills/strix-pentest.
+**Status:** promoted → claude-sync/skills/strix-pentest, 2026-10-06
