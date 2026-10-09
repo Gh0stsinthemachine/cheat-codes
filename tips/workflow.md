@@ -110,3 +110,24 @@ For marketing and explainer voiceovers, the license on the model weights matters
 **Source:** [github.com/hexgrad/kokoro](https://github.com/hexgrad/kokoro) · [github.com/resemble-ai/chatterbox](https://github.com/resemble-ai/chatterbox) · [elevenlabs.io/pricing](https://elevenlabs.io/pricing) · [ElevenLabs commercial-use FAQ](https://help.elevenlabs.io/hc/en-us/articles/13313564601361-Can-I-publish-the-content-I-generate-on-the-platform)
 **Vetted:** 2026-10-03 · VERIFIED from the repos and the pricing page; not yet run on Tom's Mac
 **Note:** Start free with Kokoro. Use Chatterbox to put Tom's own voice on narration without his mic chain. Move to ElevenLabs Starter only if a side-by-side shows a quality gap worth $6/mo against burn. arrangementLab already has a Remotion video pipeline that a generated narration track can drop into.
+
+## Selling & offers
+
+### Hormozi Value Equation — the 4 levers that make an offer sell
+
+From *$100M Offers* (Alex Hormozi). How much a buyer values an offer = (**Dream Outcome** x **Perceived Likelihood** it works) / (**Time Delay** x **Effort & Sacrifice**). Raise the top two, shrink the bottom two. Every useful offer tweak hits one of the four.
+
+1. **Sell the result, not the file** (dream outcome) — lead with what changes for the buyer ("plan a week of posts in 10 min"), not the deliverable ("50 Notion templates").
+2. **Make it believable** (likelihood) — one real page from inside the product, one real buyer quote. Never invent results.
+3. **Put a time in the promise** (time delay) — "rewrite your product page in one afternoon," not "grow over time."
+4. **Make it easy to start** (effort) — copy-paste examples, step-by-step, cut anything that makes them think hard.
+5. **Pick one specific buyer** — "for creators with a product but no sales," not "for anyone." Say it in the bio and pinned post.
+6. **Lower the fear of buying** — say who it is NOT for, answer the "will this work for me" objection, offer a refund only if you will honor it.
+
+Two extras from the same thread, not from *$100M Offers*: give one free fix before the pitch (that is Hormozi's *$100M Leads* "give away the secrets, sell the implementation"), and test one offer for 30 days, changing one thing at a time and tracking link clicks, not likes (generic, but correct).
+
+What the thread leaves out from the book: bonuses stacked on the core offer, scarcity/urgency, naming the offer, and pricing on value instead of cost.
+
+**Source:** @thecreator.amit on Threads, summarizing *$100M Offers*
+**Vetted:** 2026-10-09 · VERIFIED · steps 1-4 match the book's Value Equation term for term; 5 and 6 match its niche and guarantee chapters; 30-day test and "value before pitch" are not from *Offers* (labeled above). The thread is aimed at creators selling templates; the equation itself is general.
+**Note:** Fits Tom's B2B work too. exitPlan carrier pitch: dream outcome = fewer/smaller hurricane claims, likelihood = the FL scan-volume data, time = 90-day pilot, effort = carrier does nothing (policyholders scan themselves). Use the 4 terms as a checklist on any landing page or pitch before shipping it.
