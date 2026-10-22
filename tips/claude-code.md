@@ -203,6 +203,20 @@ The Desktop app can run your web server and test it in a built-in browser automa
 
 **Source:** @boris_cherny on Threads
 
+### Cloud sessions can't create GitHub repos — make them locally with `gh`
+
+Cloud (web/app) sessions reach GitHub through the Claude GitHub App, which can work inside existing repos and attach them mid-session ("add repo X to this session") but cannot create new ones (`403 Resource not accessible by integration`). That permission is set by Anthropic; no GitHub or claude.ai setting changes it. Local Claude Code on your Mac uses your own `gh` login, so it can.
+
+```
+brew install gh
+gh auth login
+gh repo create my-repo --private
+```
+
+**Source:** Tested in a cloud session — `create_repository` returned 403
+**Vetted:** 2026-10-22 · VERIFIED · repo creation failed twice in cloud sessions; attaching existing repos works
+**Note:** In the cloud: create the empty repo at github.com/new (Private, no README), then tell Claude "attach it." The App's "All repositories" setting only controls which *existing* repos Claude can reach.
+
 ---
 
 ## Small but mighty
