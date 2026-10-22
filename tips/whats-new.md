@@ -16,6 +16,42 @@ Anthropic moved three agent capabilities to general availability (production, no
 
 ---
 
+## Customizing Claude's own UI
+
+### Mods — draw your own widgets above the prompt, in a side pane, or in the status line
+
+A mod is a plugin with a TypeScript "hooks module" that hooks into Claude Code itself. The spot right above the text bar is called `AbovePrompt`; a `ui.render` hook on it returns a small tree (`Box`, `Text`, `Button`) and that row appears there. The same API opens side panes (`$.ui.open`), toasts (`$.ui.toast`), status-line text (`$.ui.status`), slash commands, and tool-call guards. `$.session.usage()` and the `session.measure` event give the 5-hour and weekly plan limits, context fill, and session cost.
+
+```text
+Ask Claude: "make a mod that shows my usage above the prompt"   # loads the plugin-authoring skill
+claude plugin validate <mod folder>                              # check it before it loads
+```
+
+Working example in this repo: [`mods/usage-band/`](../mods/usage-band/) — draws a row like (example numbers) `5-hour 42% (resets 14:00) · Weekly 18% · Context 31% · Session $1.20`, and toasts at 90%.
+
+**Make it permanent (every session on your Mac, terminal and desktop app):** install it as a plugin from this repo, which is also a plugin marketplace (`.claude-plugin/marketplace.json`). Type at the Claude Code prompt:
+
+```text
+/plugin install usage-band --marketplace Gh0stsinthemachine/cheat-codes
+```
+
+Answer `y` to add the marketplace, pick **user** scope. Needs this repo's `main` branch to carry `.claude-plugin/marketplace.json` (merge the PR first). Update later with `claude plugin update usage-band@cheat-codes`, then `/reload-plugins`.
+
+**For cloud sessions** (claude.ai/code), your Mac's plugins don't travel. *Untested:* committing this to a repo's `.claude/settings.json` should make cloud sessions on that repo offer to install it (you approve it once per session start):
+
+```json
+{
+  "extraKnownMarketplaces": { "cheat-codes": { "source": { "source": "github", "repo": "Gh0stsinthemachine/cheat-codes" } } },
+  "enabledPlugins": { "usage-band@cheat-codes": true }
+}
+```
+
+**Source:** Claude Code bundled `plugin-authoring` skill (v2.1.308) → `examples/band.tsx`, `reference.md`
+**Vetted:** 2026-10-22 · VERIFIED · built `usage-band`; `claude plugin validate` passed, `tsc` type-check passed; marketplace install tested from a local clone (user scope, enabled). Cloud `.claude/settings.json` route not tested
+**Note:** Early access — the API "may change between releases without notice." Rate-limit figures only appear on a subscription plan, after the first reply of the session. A mod Claude writes in a cloud session lives in that container and disappears with it; keep the copy in `mods/`. Reset times print in the machine's clock, so a cloud session shows UTC.
+
+---
+
 ## Permission & speed modes
 
 ### Auto Mode — eliminate permission prompts
