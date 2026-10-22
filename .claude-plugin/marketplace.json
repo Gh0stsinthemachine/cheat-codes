@@ -1,0 +1,14 @@
+{
+  "name": "cheat-codes",
+  "owner": {
+    "name": "Tom Sikler"
+  },
+  "description": "Tom's Claude Code mods",
+  "plugins": [
+    {
+      "name": "usage-band",
+      "source": "./mods/usage-band",
+      "description": "Shows plan usage, context fill and session cost right above the prompt"
+    }
+  ]
+}
