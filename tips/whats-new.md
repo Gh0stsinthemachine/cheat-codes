@@ -16,6 +16,29 @@ Anthropic moved three agent capabilities to general availability (production, no
 
 ---
 
+## Customizing Claude's own UI
+
+### Mods — draw your own widgets above the prompt, in a side pane, or in the status line
+
+A mod is a plugin with a TypeScript "hooks module" that hooks into Claude Code itself. The spot right above the text bar is called `AbovePrompt`; a `ui.render` hook on it returns a small tree (`Box`, `Text`, `Button`) and that row appears there. The same API opens side panes (`$.ui.open`), toasts (`$.ui.toast`), status-line text (`$.ui.status`), slash commands, and tool-call guards. `$.session.usage()` and the `session.measure` event give the 5-hour and weekly plan limits, context fill, and session cost.
+
+```text
+Ask Claude: "make a mod that shows my usage above the prompt"   # loads the plugin-authoring skill
+claude plugin validate <mod folder>                              # check it before it loads
+```
+
+Working example in this repo: [`mods/usage-band/`](../mods/usage-band/) — draws a row like (example numbers) `5-hour 42% (resets 14:00) · Weekly 18% · Context 31% · Session $1.20`, and toasts at 90%. To load it in every desktop-app session on your Mac, clone this repo and add to `~/.claude/settings.json`:
+
+```json
+{ "env": { "CLAUDE_CODE_PLUGIN_DIRS": "/absolute/path/to/cheat-codes/mods/usage-band" } }
+```
+
+**Source:** Claude Code bundled `plugin-authoring` skill (v2.1.308) → `examples/band.tsx`, `reference.md`
+**Vetted:** 2026-10-22 · VERIFIED · built `usage-band`; `claude plugin validate` passed, `tsc` type-check passed
+**Note:** Early access — the API "may change between releases without notice." Rate-limit figures only appear on a subscription plan, after the first reply of the session. A mod Claude writes in a cloud session lives in that container and disappears with it; keep the copy in `mods/`. Reset times print in the machine's clock, so a cloud session shows UTC.
+
+---
+
 ## Permission & speed modes
 
 ### Auto Mode — eliminate permission prompts
