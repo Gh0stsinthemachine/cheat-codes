@@ -25,30 +25,31 @@ A mod is a plugin with a TypeScript "hooks module" that hooks into Claude Code i
 ```text
 Ask Claude: "make a mod that shows my usage above the prompt"   # loads the plugin-authoring skill
 claude plugin validate <mod folder>                              # check it before it loads
+claude plugin test <mod folder>                                  # runs its tests/*.test.tsx against the engine
 ```
 
 Working example in this repo: [`mods/usage-band/`](../mods/usage-band/) — draws a row like (example numbers) `5-hour 42% (resets 14:00) · Weekly 18% · Context 31% · Session $1.20`, and toasts at 90%.
 
-**Make it permanent (every session on your Mac, terminal and desktop app):** install it as a plugin from this repo, which is also a plugin marketplace (`.claude-plugin/marketplace.json`). Type at the Claude Code prompt:
+**Where it shows:** terminal sessions and *local* sessions in the Claude desktop app only. Cloud sessions (claude.ai/code) don't draw the `AbovePrompt` band, and their text bar refuses `/plugin` commands, so a mod can't change that UI.
+
+**Install once, for every local session on the Mac:** in a local session, type into the text bar:
 
 ```text
 /plugin install usage-band --marketplace Gh0stsinthemachine/cheat-codes
 ```
 
-Answer `y` to add the marketplace, pick **user** scope. Needs this repo's `main` branch to carry `.claude-plugin/marketplace.json` (merge the PR first). Update later with `claude plugin update usage-band@cheat-codes`, then `/reload-plugins`.
+`y` to add the marketplace, then **user** scope. Same thing from Terminal:
 
-**For cloud sessions** (claude.ai/code), your Mac's plugins don't travel. *Untested:* committing this to a repo's `.claude/settings.json` should make cloud sessions on that repo offer to install it (you approve it once per session start):
-
-```json
-{
-  "extraKnownMarketplaces": { "cheat-codes": { "source": { "source": "github", "repo": "Gh0stsinthemachine/cheat-codes" } } },
-  "enabledPlugins": { "usage-band@cheat-codes": true }
-}
+```text
+claude plugin marketplace add Gh0stsinthemachine/cheat-codes
+claude plugin install usage-band@cheat-codes
 ```
 
-**Source:** Claude Code bundled `plugin-authoring` skill (v2.1.308) → `examples/band.tsx`, `reference.md`
-**Vetted:** 2026-10-22 · VERIFIED · built `usage-band`; `claude plugin validate` passed, `tsc` type-check passed; marketplace install tested from a local clone (user scope, enabled). Cloud `.claude/settings.json` route not tested
-**Note:** Early access — the API "may change between releases without notice." Rate-limit figures only appear on a subscription plan, after the first reply of the session. A mod Claude writes in a cloud session lives in that container and disappears with it; keep the copy in `mods/`. Reset times print in the machine's clock, so a cloud session shows UTC.
+If Terminal answers `no such file or directory` for `claude`, the command points at an install that's gone. Reinstall with `curl -fsSL https://claude.ai/install.sh | bash`, open a new Terminal window, and retry. Update later: `claude plugin update usage-band@cheat-codes`, then `/reload-plugins`.
+
+**Source:** Claude Code bundled `plugin-authoring` skill (v2.1.308) → `examples/band.tsx`, `reference.md`, `types/claude-code.d.ts` (`AbovePrompt`: "Raised on the terminal and desktop surfaces only")
+**Vetted:** 2026-10-22 · VERIFIED · built `usage-band`; `claude plugin validate` passed; `tsc` type-check passed; `claude plugin test` 3/3 pass on terminal and desktop surfaces; install from the GitHub marketplace tested on a cloud machine (user scope, enabled). The text-bar `/plugin install` form and the Terminal reinstall are the documented routes; not run on a Mac from here.
+**Note:** Early access — the API "may change between releases without notice." Rate-limit figures only appear on a subscription plan, after the first reply of the session. A mod Claude writes in a cloud session lives in that container and disappears with it; keep the copy in `mods/`. Reset times print in the machine's clock.
 
 ---
 

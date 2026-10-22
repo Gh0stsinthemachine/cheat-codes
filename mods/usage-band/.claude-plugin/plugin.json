@@ -1,1 +1,7 @@
-{ "name": "usage-band", "version": "0.1.0", "description": "Shows plan usage, context fill and session cost right above the prompt", "types": "./types/index.d.ts" }
+{
+  "name": "usage-band",
+  "version": "0.1.0",
+  "description": "Shows plan usage, context fill and session cost right above the prompt",
+  "author": { "name": "Tom Sikler" },
+  "types": "./types/index.d.ts"
+}
