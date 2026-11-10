@@ -131,3 +131,4 @@ What the thread leaves out from the book: bonuses stacked on the core offer, sca
 **Source:** @thecreator.amit on Threads, summarizing *$100M Offers*
 **Vetted:** 2026-10-09 · VERIFIED · steps 1-4 match the book's Value Equation term for term; 5 and 6 match its niche and guarantee chapters; 30-day test and "value before pitch" are not from *Offers* (labeled above). The thread is aimed at creators selling templates; the equation itself is general.
 **Note:** Fits Tom's B2B work too. exitPlan carrier pitch: dream outcome = fewer/smaller hurricane claims, likelihood = the FL scan-volume data, time = 90-day pilot, effort = carrier does nothing (policyholders scan themselves). Use the 4 terms as a checklist on any landing page or pitch before shipping it.
+**Status:** promoted → claude-sync/skills/app-marketing/SKILL.md (2.10 Sexy offer)
