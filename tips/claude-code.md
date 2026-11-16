@@ -310,3 +310,13 @@ Removes the tells of AI-generated prose (overused em-dashes, "thrilled/passionat
 
 **Source:** avatarist.ai (Threads) · ~7k stars
 **Note:** Codifies my cover-letter rules. Could fork it into a personal skill that bakes in my specific scrub-list.
+
+### Advisor: Opus does the work, Fable weighs in on hard calls
+
+Claude Code's advisor tool (experimental) pairs the main model with a stronger one. The advisor reads the whole conversation and is consulted at decision points: before committing to an approach, when an error keeps coming back, before calling a task done. Claude decides when to call it; you can also say "consult the advisor before you continue".
+
+`/advisor fable` (type in chat; saves as the default) · `/advisor off` · `claude --advisor fable` (one session)
+
+**Source:** code.claude.com/docs/en/advisor.md · support.claude.com/en/articles/15424964 (lead: Charlie Hills infographic "The Last Day of Fable 5.2")
+**Vetted:** 2026-11-16 · VERIFIED · read against the official docs; `/advisor` itself not yet run on this Mac
+**Note:** On the Max plan Fable is included, up to 50% of each week's allowance; past that it bills to usage credits (extra money). Fable is 2x Opus per token ($8/$40 vs $4/$20 per million). Advisor calls count toward plan limits and are not cached, so each call re-reads the whole conversation. The paired working method is the `fable-playbook` skill in claude-sync; Opus loads it reliably when named, not reliably on its own (tested 2026-11-16).
